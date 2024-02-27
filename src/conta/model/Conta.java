@@ -1,12 +1,13 @@
 package conta.model;
 
-public class Conta {
+public class Conta{
 	
 	private String nomeDoProduto;
 	private int tipoDeProduto;
 	private int idProduto;
 	private float precoProduto;
-	public Conta(String nomeDoProduto, int tipoDeProduto, int iD, float preco) {
+	
+	public Conta(String nomeDoProduto, int tipoDeProduto, int iD, float preco, float precoProduto) {
 		this.nomeDoProduto = nomeDoProduto;
 		this.tipoDeProduto = tipoDeProduto;
 		this.idProduto = iD;
@@ -40,29 +41,19 @@ public class Conta {
 
 	public void visualizar() {
 
-		String tipo = "";
+		String tipo = (this.tipoDeProduto == 1) ? "Feminino" : "Masculino";
 		
-		switch(this.tipoDeProduto) {
-		case 1:
-			tipo = "Feminino";
-		break;
-		case 2:
-			tipo = "Masculino";
-		break;
-		}
-		
+
 		System.out.println("\n\n***********************************************************");
-		System.out.println("Dados dos Produto:");
+		System.out.println("Dados do Produto:");
 		System.out.println("**************************************************************");
-		System.out.println("Produto " + this.nomeDoProduto);
-		System.out.println(" Tipo de Produto " + tipo);
-		System.out.println("ID Produto: " + this.idProduto);
-		System.out.println("Titular: " + this.precoProduto);
-		System.out.println("                                                             " );
-		System.out.println("*************************************************************" );
+		System.out.println("Produto: " + this.nomeDoProduto);
+		System.out.println("Tipo de Produto: " + tipo);
+		System.out.println("ID do Produto: " + this.idProduto);
+		System.out.println("Preço do Produto: " + this.precoProduto);
+		System.out.println("*************************************************************\n");
+	}
 		
-	
 	}	
 
-}
 	
